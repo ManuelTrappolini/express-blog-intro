@@ -8,8 +8,9 @@ La rotta relativa ai post dovrà chiamare la funzione index() dal controller ded
 
 const express = require('express');
 const app = express();
+const postsControllers = require('./Controllers/PostsController.js');
 const host = 'http://127.0.0.1';
-const port = 3006;
+const port = 3007;
 
 app.listen(port,() =>{
     console.log(`Use this link ${host}:${port}`);
@@ -19,3 +20,6 @@ app.listen(port,() =>{
 app.get('/',(req,res) =>{
     res.send('<h1>Benvenuto nel mio Blog!</h1>')
 })
+
+
+app.get('/posts', postsControllers.index)
