@@ -5,3 +5,17 @@
 La rotta relativa ai post dovrà chiamare la funzione index() dal controller dedicato ( controllers/posts.js )
 4. Configuriamo gli asset statici sull’applicazione in modo che si possano visualizzare le immagini associate ad ogni post.
 5. Testare nel browser. */
+
+const express = require('express');
+const app = express();
+const host = 'http://127.0.0.1';
+const port = 3006;
+
+app.listen(port,() =>{
+    console.log(`Use this link ${host}:${port}`);
+    
+})
+
+app.get('/',(req,res) =>{
+    res.send('<h1>Benvenuto nel mio Blog!</h1>')
+})
