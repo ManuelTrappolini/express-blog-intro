@@ -4,13 +4,17 @@
 3. Creiamo poi una rotta /posts che restituisca un oggetto json con la lista dei post e il conteggio, partendo da un array locale.
 La rotta relativa ai post dovrà chiamare la funzione index() dal controller dedicato ( controllers/posts.js )
 4. Configuriamo gli asset statici sull’applicazione in modo che si possano visualizzare le immagini associate ad ogni post.
-5. Testare nel browser. */
+5. Testare nel browser. 
+6. Spostiamo l’array dei post in un file separato da importare poi dentro il controller
+7. Creare una nuova rotta con cui stampare la lista in html come ul
+8. Create una pagina statica html da cui far partire una chiamata ajax per consumare il vostro enpoint json.*/
 
 const express = require('express');
 const app = express();
 const postsControllers = require('./Controllers/PostsController.js');
 const host = 'http://127.0.0.1';
-const port = 3007;
+app.use(express.static('public'))
+const port = 3008;
 
 app.listen(port,() =>{
     console.log(`Use this link ${host}:${port}`);
